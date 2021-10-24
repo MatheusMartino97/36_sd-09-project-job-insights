@@ -39,7 +39,10 @@ def get_max_salary(path):
     jobs = read(path)
     salaries = []
     for job in jobs:
-        if (job["max_salary"].isnumeric() and job["max_salary"] not in salaries):
+        if (
+            job["max_salary"].isnumeric()
+            and job["max_salary"] not in salaries
+        ):
             salaries.append(int(job["max_salary"]))
     max_salary = max(salaries, key=int)
     return max_salary
@@ -57,19 +60,22 @@ def get_min_salary(path):
 
 def matches_salary_range(job, salary):
     if not ("min_salary" in job and "max_salary" in job):
-        raise ValueError("The keys max_salary and min_salary must exist in job")
-    
-    if not (isinstance(job.get("min_salary"), int) and isinstance(job.get("max_salary"), int)):
+        raise ValueError("Max_salary and min_salary must exist in job")
+
+    if not (
+        isinstance(job.get("min_salary"), int)
+        and isinstance(job.get("max_salary"), int)
+    ):
         raise ValueError("The keys max_salary and min_salary must be integers")
-    
+
     if job["min_salary"] > job["max_salary"]:
-        raise ValueError("The max_salary value must be greater than the min_salary value")
+        raise ValueError("The max_salary must be greater than the min_salary")
 
     if not isinstance(salary, int):
         raise ValueError("Salary must be an integer")
-    
-    is_salary_between_range = int(job["min_salary"]) <= salary <= int(job["max_salary"])
-    return is_salary_between_range
+
+    salary_match = int(job["min_salary"]) <= salary <= int(job["max_salary"])
+    return salary_match
 
 
 def filter_by_salary_range(jobs, salary):

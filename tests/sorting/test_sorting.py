@@ -7,7 +7,7 @@ jobs_list = [
         "name": "Carpinteiro",
         "min_salary": 1000,
         "max_salary": 30000,
-        "date_posted": "2017-07-07"    
+        "date_posted": "2017-07-07"
     },
     {
         "name": "Balconista",
@@ -28,7 +28,7 @@ expected_sort_by_min_salary = [
         "name": "Carpinteiro",
         "min_salary": 1000,
         "max_salary": 30000,
-        "date_posted": "2017-07-07"    
+        "date_posted": "2017-07-07"
     },
     {
         "name": "Balconista",
@@ -49,7 +49,7 @@ expected_sort_by_max_salary = [
         "name": "Carpinteiro",
         "min_salary": 1000,
         "max_salary": 30000,
-        "date_posted": "2017-07-07"    
+        "date_posted": "2017-07-07"
     },
     {
         "name": "Balconista",
@@ -70,7 +70,7 @@ expected_sort_by_date_posted = [
         "name": "Carpinteiro",
         "min_salary": 1000,
         "max_salary": 30000,
-        "date_posted": "2017-07-07"    
+        "date_posted": "2017-07-07"
     },
     {
         "name": "Balconista",

@@ -86,15 +86,16 @@ expected_sort_by_date_posted = [
     }
 ]
 
+
 def test_sort_by_criteria():
     sort_by(jobs_list, "min_salary")
     assert jobs_list == expected_sort_by_min_salary
-    
+
     sort_by(jobs_list, "max_salary")
     assert jobs_list == expected_sort_by_max_salary
-    
+
     sort_by(jobs_list, "date_posted")
     assert jobs_list == expected_sort_by_date_posted
-    
+
     with pytest.raises(ValueError, match="invalid sorting criteria: color"):
         sort_by(jobs_list, "color")
